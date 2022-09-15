@@ -33,7 +33,7 @@ COPY --from=build /opt/python /opt/python
 WORKDIR /usr/local/bin
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64//kubectl   && chmod +x kubectl
-RUN curl https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz  | tar -xz linux-amd64/helm && chmod +x helm
+RUN curl https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz  | tar -xz linux-amd64/helm && mv linux-amd64/helm ./helm && rmdir linux-amd64 && chmod +x helm
 RUN curl https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp/${OC_VERSION}/openshift-client-linux-${OC_VERSION}.tar.gz tar -xz oc && chmod +x oc
 
 
