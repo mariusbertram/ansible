@@ -42,7 +42,7 @@ ln -s -f /opt/python/${PYTHON_VERSION}/bin/pip3 /opt/python/${PYTHON_VERSION}/bi
 
 WORKDIR /data
 COPY requirements-galaxy.yaml /data
-RUN echo "installing ansible collection" && ansible-galaxy collection install -r requiremts-galaxy.yaml && rm requiremts-galaxy.yaml
+RUN echo "installing ansible collection" && ansible-galaxy collection install -r requirements-galaxy.yaml && rm requirements-galaxy.yaml
 
 ENV PATH="/opt/python/${PYTHON_VERSION}/bin:$PATH"
 
