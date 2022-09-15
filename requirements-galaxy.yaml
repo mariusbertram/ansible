@@ -1,0 +1,9 @@
+---
+collections:
+   -name:kubernetes.core
+    version:2.3.2
+   -name:containers.podman
+    version:1.9.4
+   -name:ansible.posix
+    version:1.4.0
+ 
