@@ -26,7 +26,7 @@ ENV PYTHON_VERSION=3.10.7
 ENV KUBECTL_VERSION=v1.23.0
 ENV HELM_VERSION=v3.9.4
 ENV OC_VERSION=4.10.17
-RUN apk add --no-cache git libffi libxml2 libxslt
+RUN apk add --no-cache git libffi libxml2 libxslt curl
 
 COPY --from=build /opt/python /opt/python
 
