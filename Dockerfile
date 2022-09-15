@@ -39,12 +39,12 @@ RUN curl https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp/${OC_VE
 
 RUN ln -s -f /opt/python/${PYTHON_VERSION}/bin/python3 /opt/python/${PYTHON_VERSION}/bin/python && \
 ln -s -f /opt/python/${PYTHON_VERSION}/bin/pip3 /opt/python/${PYTHON_VERSION}/bin/pip
-
+ENV PATH="/opt/python/${PYTHON_VERSION}/bin:$PATH"
 WORKDIR /data
 COPY requirements-galaxy.yaml .
 RUN echo "installing ansible collection" && ansible-galaxy collection install -r requirements-galaxy.yaml && rm requirements-galaxy.yaml
 
-ENV PATH="/opt/python/${PYTHON_VERSION}/bin:$PATH"
+
 
 
 CMD [ "sh" ]
